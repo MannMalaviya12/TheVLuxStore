@@ -1,73 +1,189 @@
+/* Reset and basic styling */
 body {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: 'Times New Roman', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
 
-.TopHeader {
+.top-bar {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    padding: 20px 0;
-    background-color: #ffffff;
-    max-height: 50px;
-}
-h1{
-    font-size: 20px;
-}
-.logo{
-    max-width: 70px;
-    margin-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
 }
 
-nav {
-    background-color: #000000;
-    padding: 10px 0;
+.top-bar .logo img {
+    height: 50px;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 24px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header-right a:hover {
+    color: #ffc107;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #495057;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+    display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
+nav a {
+    color: #f8f9fa;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-main {
+nav a:hover {
+    color: #ffc107;
+}
+
+.banner {
+    position: relative;
+    height: 400px;
+    overflow: AUTO;
+}
+
+.slider {
+    display: flex;
+    width: 300%; /* Ensure enough width to fit all slides */
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out; /* Slide animation */
+}
+
+.slide.active {
+    transform: translateX(0%);
+}
+
+.slide.next {
+    transform: translateX(-100%);
+}
+
+.slide.prev {
+    transform: translateX(100%);
+}
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #343a40;
+    font-size: 2em;
+}
+
+.products,
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product,
+.category {
+    background-color: #ffffff;
     padding: 20px;
-    min-height: 400px; /* Adjust based on your needs */
+    border-radius: 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 240px; /* Increased width for product/category */
+}
+
+.product:hover,
+.category:hover {
+    transform: scale(1.05);
+}
+
+.product img,
+.category img {
+    max-width: 150px;
+    border-radius: 10px;
+    height: auto; /* Ensures images maintain aspect ratio */
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #dc3545;
 }
 
 footer {
-    background-color: #000000;
-    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background-color: #343a40;
+    color: #f8f9fa;
 }
 
-footer .social-media a,
-footer .footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+/* Animation for Categories Section */
+.categories .category {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-footer .social-media a:hover,
-footer .footer-links a:hover {
-    text-decoration: underline;
+.categories .category.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Animation for New Launch Section */
+#new-launch .product {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#new-launch .product.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Animation for Sale Section */
+#sale .product {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#sale .product.visible {
+    transform: translateX(0);
+    opacity: 1;
 }
