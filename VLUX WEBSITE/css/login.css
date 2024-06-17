@@ -1,6 +1,8 @@
 $p: hsl(213deg 85% 97%);
 $s: hsl(233deg 36% 38%);
-* { font-family: 'Poppins'; }
+* {
+    font-family: 'Poppins';
+}
 
 @mixin screen {
     background: $p;
@@ -10,6 +12,7 @@ $s: hsl(233deg 36% 38%);
     border-radius: 30px;
     box-shadow: 0 0 2em hsl(231deg 62% 94%);
 }
+
 body {
     user-select: none;
     overflow-y: hidden;
@@ -89,7 +92,7 @@ body {
 
     .login {
         padding: 1em;
-        background: hsl(233deg 36% 38%);
+        background: $s;
         color: hsl(0, 0%, 100%);
         border: none;
         border-radius: 30px;
