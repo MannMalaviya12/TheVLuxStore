@@ -1,16 +1,7 @@
 $p: hsl(213deg 85% 97%);
 $s: hsl(233deg 36% 38%);
 * {
-    font-family: 'Poppins';
-}
-
-@mixin screen {
-    background: $p;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    border-radius: 30px;
-    box-shadow: 0 0 2em hsl(231deg 62% 94%);
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -21,95 +12,83 @@ body {
     align-items: center;
     background: hsl(218deg 50% 91%);
     height: 100vh;
+    margin: 0;
 }
 
 .screen-1 {
-    @include screen;
+    background: $p;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 0 2em hsl(231deg 62% 94%);
     gap: 2em;
+}
 
-    .logo {
-        margin-top: -3em;
-    }
+.logo img {
+    width: 100px; /* Adjust the size as needed */
+    margin-bottom: 2em;
+}
 
-    .email {
-        background: hsl(0deg 0% 100%);
-        box-shadow: 0 0 2em hsl(231deg 62% 94%);
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        border-radius: 20px;
-        color: hsl(0deg 0% 30%);
-        margin-top: -3em;
-        margin-bottom: 1em;
+.email, .password {
+    background: hsl(0deg 0% 100%);
+    box-shadow: 0 0 2em hsl(231deg 62% 94%);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    color: hsl(0deg 0% 30%);
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1em;
+    gap: 0.5em;
 
-        input {
-            outline: none;
-            border: none;
-
-            &::placeholder {
-                color: hsl(0deg 0% 0%);
-                font-size: 0.9em;
-            }
-        }
-
-        ion-icon {
-            color: hsl(0deg 0% 30%);
-            margin-bottom: -0.2em;
-        }
-    }
-
-    .password {
-        background: hsl(0deg 0% 100%);
-        box-shadow: 0 0 2em hsl(231deg 62% 94%);
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        border-radius: 20px;
-        color: hsl(0deg 0% 30%);
-        margin-bottom: 1em;
-
-        input {
-            outline: none;
-            border: none;
-
-            &::placeholder {
-                color: hsl(0deg 0% 0%);
-                font-size: 0.9em;
-            }
-        }
-
-        ion-icon {
-            color: hsl(0deg 0% 30%);
-            margin-bottom: -0.2em;
-        }
-
-        .show-hide {
-            margin-right: -5em;
-        }
-    }
-
-    .login {
-        padding: 1em;
-        background: $s;
-        color: hsl(0, 0%, 100%);
+    input {
+        flex-grow: 1;
+        outline: none;
         border: none;
-        border-radius: 30px;
-        font-weight: 600;
-        margin-bottom: 1em;
+        padding: 0.5em;
+        font-size: 1em;
+
+        &::placeholder {
+            color: hsl(0deg 0% 0%);
+        }
     }
 
-    .footer {
-        display: flex;
-        font-size: 0.7em;
-        color: hsl(0deg 0% 37%);
-        gap: 14em;
-        padding-bottom: 10em;
+    ion-icon {
+        color: hsl(0deg 0% 30%);
+    }
+}
 
-        span {
-            cursor: pointer;
-        }
+.password .show-hide {
+    cursor: pointer;
+}
+
+.login {
+    padding: 1em;
+    background: $s;
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: hsl(0deg 0% 37%);
+    width: 100%;
+    max-width: 300px;
+
+    span {
+        cursor: pointer;
     }
 }
 
