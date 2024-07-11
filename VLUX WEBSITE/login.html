@@ -3,33 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login and Register Page</title>
     <link rel="stylesheet" href="./css/login.css"> <!-- Link to your compiled CSS -->
 </head>
 <body>
-    <div class="screen-1">
-        <div class="logo">
-            <img src="./img/logo.jpg" alt="Logo">
+    <div class="container">
+        <div class="screen-1">
+            <h3>Login</h3>
+            <form id="loginForm">
+                <div class="email">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="password">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <ion-icon name="eye-outline" class="show-hide" id="togglePassword"></ion-icon>
+                </div>
+                <button type="submit" class="login">Login</button>
+            </form>
+            <div class="footer">
+                <span>Forgot Password?</span>
+                <span>Sign Up</span>
+            </div>
         </div>
-        <form id="loginForm">
-            <div class="email">
-                <ion-icon name="mail-outline"></ion-icon>
-                <input type="email" id="email" name="email" placeholder="Email" required>
+        <div class="screen-2">
+            <h3>Register</h3>
+            <form id="registerForm">
+                <div class="username">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="email-register">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="email-register" name="email" placeholder="Email" required>
+                </div>
+                <div class="password-register">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password-register" name="password" placeholder="Password" required>
+                    <ion-icon name="eye-outline" class="show-hide" id="togglePasswordRegister"></ion-icon>
+                </div>
+                <div class="confirm-password">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm Password" required>
+                    <ion-icon name="eye-outline" class="show-hide" id="toggleConfirmPassword"></ion-icon>
+                </div>
+                <button type="submit" class="register">Register</button>
+            </form>
+            <div class="footer-register">
+                <span>Already have an account? Login</span>
             </div>
-            <div class="password">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <ion-icon name="eye-outline" class="show-hide" id="togglePassword"></ion-icon>
-            </div>
-            <button type="submit" class="login">Login</button>
-        </form>
-        <div class="footer">
-            <span>Forgot Password?</span>
-            <span>Sign Up</span>
         </div>
     </div>
-
     <script src="https://code.ionicframework.com/ionicons/5.5.2/ionicons.min.js"></script>
-    <script src="./js/login.js"></script> <!-- Link to your JavaScript file -->
+    <script src="./Javascript/login.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

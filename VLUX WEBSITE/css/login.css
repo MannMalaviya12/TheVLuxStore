@@ -1,97 +1,109 @@
-$p: hsl(213deg 85% 97%);
-$s: hsl(233deg 36% 38%);
-* {
-    font-family: 'Poppins', sans-serif;
+/* File: css/login.css */
+.logo {
+    max-width: 50px;
 }
 
-body {
-    user-select: none;
-    overflow-y: hidden;
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: hsl(218deg 50% 91%);
-    height: 100vh;
-    margin: 0;
+    background: url('../img/logo.jpg') no-repeat center center;
+    background-size: cover;
 }
-
-.screen-1 {
-    background: $p;
-    padding: 2em;
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 30px;
-    box-shadow: 0 0 2em hsl(231deg 62% 94%);
-    gap: 2em;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
-
-.logo img {
-    width: 100px; /* Adjust the size as needed */
-    margin-bottom: 2em;
-}
-
-.email, .password {
-    background: hsl(0deg 0% 100%);
-    box-shadow: 0 0 2em hsl(231deg 62% 94%);
-    padding: 1em;
+h3 {
     display: flex;
-    align-items: center;
-    border-radius: 20px;
-    color: hsl(0deg 0% 30%);
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1em;
-    gap: 0.5em;
-
-    input {
-        flex-grow: 1;
-        outline: none;
-        border: none;
-        padding: 0.5em;
-        font-size: 1em;
-
-        &::placeholder {
-            color: hsl(0deg 0% 0%);
-        }
-    }
-
-    ion-icon {
-        color: hsl(0deg 0% 30%);
-    }
+    justify-content: center;
+}
+.screen-1, .screen-2 {
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    width: 300px;
+    margin-bottom: 2em; /* Space between the forms */
 }
 
-.password .show-hide {
-    cursor: pointer;
-}
-
-.login {
-    padding: 1em;
-    background: $s;
-    color: hsl(0, 0%, 100%);
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    width: 100%;
-    max-width: 300px;
-    cursor: pointer;
-    margin-bottom: 1em;
+.logo {
     text-align: center;
+    margin-bottom: 1em;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8em;
-    color: hsl(0deg 0% 37%);
-    width: 100%;
-    max-width: 300px;
+form div {
+    margin-bottom: 1em;
+    position: relative;
+}
 
-    span {
-        cursor: pointer;
-    }
+form div ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.show-hide {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
 }
 
 button {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer, .footer-register {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.footer span, .footer-register span {
+    display: block;
+    margin-top: 0.5em;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.footer span:hover, .footer-register span:hover {
+    text-decoration: underline;
 }
